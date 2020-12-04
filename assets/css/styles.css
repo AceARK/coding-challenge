@@ -1,0 +1,173 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+h1 {
+    font: 36px Arial;
+    font-weight: bold;
+}
+
+/*  Line height specified hence adding, 
+    but the line underneath item name would look more like wireframes without it */
+p {
+    margin: 0px;
+    line-height: 150%;
+}
+
+ul {
+    padding-inline-start: 0px;
+}
+
+.container__item {
+    background-color: #FFF4D5;
+    color: #2C3A47;
+    font: 16px Arial;
+    font-weight: normal;
+    padding: 9px;
+    margin-bottom: 20px;
+    border-right: 5px solid #E17055;
+    border-bottom: 5px solid #E17055;
+    flex: 1;
+    margin-right: 10px;
+    position: relative;
+    display: block;
+}
+
+/*  Although font size specified is 16px, according to wireframes, it looks 17, so using that.
+    At this point, I generally talk to BA/ Business about whether they need me to use the specification,
+    or the size shown on wireframes. */
+.container__item--qty, .container__item--category {
+    text-transform: uppercase;
+    color: #E17055;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.container__item--qty {
+    float: right;
+}
+
+/* Headings to be 36px bold */
+.container__item--name {
+    font-size: 36px;
+    font-weight: bold;
+    border-bottom: 3px solid darkgrey;
+    margin-bottom: 5px;
+    margin-top: 45px;
+}
+
+/* Small description font not specified, hence going by wireframes */
+.container__item--description {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.container__item--category {
+    position: absolute;
+    bottom: 0;
+}
+
+@media only screen and (min-width: 1025px) {
+    .main {
+        width: 980px;
+        margin: 0 auto;
+    }
+    .container {
+        display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;  /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        /*align-content: space-between;*/
+        flex-wrap: wrap;
+    }
+    /* This ensures each item is equidistant and is arranged 4 in each row */
+    .container__item {
+        flex: 1 0 19%;
+        margin-left: 22px;
+        margin-right: 22px;
+        height: 200px;
+        margin-bottom: 50px;
+    }
+    li.container__item:nth-child(1), li.container__item:nth-child(5) {
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (min-width: 828px) and (max-width: 1024px) {
+    .main {
+        padding: 15px;
+    }
+    .container {
+        display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;  /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        /*align-content: space-between;*/
+        flex-wrap: wrap;
+    }
+    .container__item {
+        flex: 1 0 19%;
+        margin-left: 23px;
+        margin-right: 23px;
+        height: 200px;
+    }
+    li.container__item:nth-child(1), li.container__item:nth-child(5) {
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 827px) {
+    .main {
+        padding: 15px;
+    }
+    .container {
+        display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+        display: -ms-flexbox;  /* TWEENER - IE 10 */
+        display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+        display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        /*align-content: space-between;*/
+        flex-wrap: wrap;
+    }
+    .container__item {
+        flex: 1 0 9%;
+        margin-left: 9px;
+        margin-right: 9px;
+        height: 190px;
+    }
+
+    .container__item--name {
+        margin-top: 38px;
+    }
+    li.container__item:nth-child(1), li.container__item:nth-child(5) {
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .main {
+        padding: 10px;
+    }
+    .container {
+        display: block;
+    }
+    .container__item {
+        height: 200px;
+        margin-right: 0px;
+    }
+}
